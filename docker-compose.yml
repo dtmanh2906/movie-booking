@@ -1,0 +1,32 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: moviebooking-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Set password in .env}
+    ports:
+      - "127.0.0.1:1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: moviebooking-api:dev
+    container_name: moviebooking-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=CinemaBookingDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:?Set password in .env};TrustServerCertificate=True"
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      - sqlserver
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
