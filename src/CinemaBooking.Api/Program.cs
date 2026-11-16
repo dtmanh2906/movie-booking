@@ -1,6 +1,7 @@
 using CinemaBooking.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,6 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
-
 
 // Add services to the container.
 
@@ -32,5 +32,19 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Chỉ tạo dữ liệu mẫu trong môi trường Development
+if (app.Environment.IsDevelopment())
+{
+    // Tạo một phạm vi sử dụng dịch vụ (Scope)
+    using var scope = app.Services.CreateScope();
+
+    // Lấy AppDbContext từ Dependency Injection
+    var db = scope.ServiceProvider
+        .GetRequiredService<AppDbContext>();
+
+    // Tạo dữ liệu mẫu
+    await DbSeeder.SeedAsync(db);
+}
 
 app.Run();
