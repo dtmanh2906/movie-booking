@@ -1,3 +1,4 @@
+
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -22,6 +23,13 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=CinemaBookingDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:?Set password in .env};TrustServerCertificate=True"
+
+      # Cau hinh JWT
+      Jwt__Key: ${JWT_KEY}
+
+      # Mat khau Admin cho Development
+      Seed__AdminPassword: ${ADMIN_PASSWORD}
+
     ports:
       - "127.0.0.1:8080:8080"
     depends_on:

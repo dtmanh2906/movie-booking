@@ -1,6 +1,10 @@
 using CinemaBooking.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using CinemaBooking.Domain.Constants;
+using Microsoft.AspNetCore.Authorization;
+using CinemaBooking.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace CinemaBooking.Api.Controllers;
 
@@ -28,5 +32,36 @@ public class GenresController : ControllerBase
             .ToListAsync();
 
         return Ok(genres);
+    }
+
+    [Authorize(Roles = Roles.Admin)]
+    [HttpPost]
+    public async Task<IActionResult> Create(
+    [FromBody] CreateGenreRequest request)
+    {
+        var name = request.Name.Trim();
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return BadRequest(new
+            {
+                message = "Tên thể loại không được để trống."
+            });
+        }
+
+        var genre = new Genre
+        {
+            Name = name
+        };
+
+        _dbContext.Genres.Add(genre);
+
+        await _dbContext.SaveChangesAsync();
+
+        return Ok(new
+        {
+            genre.Id,
+            genre.Name
+        });
     }
 }
