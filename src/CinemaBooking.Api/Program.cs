@@ -9,6 +9,13 @@ using CinemaBooking.Application.Auth;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Text.Json.Serialization;
+using CinemaBooking.Api.Errors;
+using CinemaBooking.Api.Filters;
+using CinemaBooking.Application.Genres;
+using CinemaBooking.Application.Movies;
+using CinemaBooking.Infrastructure.Services;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,8 +27,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Đăng ký ASP.NET Core Identity cho Web API
-builder.Services
-    .AddIdentityCore<User>(options =>
+builder.Services.AddIdentityCore<User>(options =>
     {
         // Mỗi email chỉ được sử dụng cho một tài khoản
         options.User.RequireUniqueEmail = true;
@@ -36,7 +42,18 @@ builder.Services
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    // Kiểm tra dữ liệu trước khi chạy Controller
+    options.Filters.Add<FluentValidationFilter>();
+})
+.AddJsonOptions(options =>
+{
+    // Chuyển enum AgeRating thành chuỗi như T13, T16
+    options.JsonSerializerOptions.Converters.Add(
+        new JsonStringEnumConverter());
+});
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
@@ -50,6 +67,17 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 // Đăng ký service tạo JWT
 builder.Services.AddSingleton<IJwtTokenService, JwtTokenService>();
 
+// Đăng ký các Validator trong Application
+builder.Services.AddValidatorsFromAssemblyContaining<
+    UpsertMovieRequestValidator>();
+
+// Đăng ký bộ xử lý lỗi toàn cục
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+// Đăng ký Service quản lý thể loại và phim
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 // Lấy cấu hình JWT
 var jwt = builder.Configuration
     .GetSection(JwtOptions.SectionName)
@@ -115,6 +143,9 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Bắt và xử lý exception từ những middleware phía sau
+app.UseExceptionHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -308,8 +308,12 @@ public static class DbSeeder
             ["dem-tren-doi-thong"] = ["Horror"]
         };
 
-        // Include tải cả thể loại đã gắn với mỗi phim
+        // Chỉ lấy những phim mẫu đã khai báo trong movieGenreMap.
+        // Không lấy phim do Admin tạo thêm.
+        var seedMovieSlugs = movieGenreMap.Keys.ToArray();
+
         var savedMovies = await db.Movies
+            .Where(m => seedMovieSlugs.Contains(m.Slug))
             .Include(m => m.Genres)
             .ToListAsync(cancellationToken);
 
