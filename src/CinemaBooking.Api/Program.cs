@@ -16,6 +16,7 @@ using CinemaBooking.Application.Genres;
 using CinemaBooking.Application.Movies;
 using CinemaBooking.Infrastructure.Services;
 using FluentValidation;
+using CinemaBooking.Application.Cinemas;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,6 +79,7 @@ builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 // Đăng ký Service quản lý thể loại và phim
 builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<ICinemaService, CinemaService>();
 // Lấy cấu hình JWT
 var jwt = builder.Configuration
     .GetSection(JwtOptions.SectionName)
