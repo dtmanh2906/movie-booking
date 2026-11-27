@@ -9,3 +9,7 @@
 **/dist/
 .vs/
 .vscode/
+
+# Local QA tools, reports, scripts, logs and archived test artifacts
+tests/local-qa/
+artifacts/
