@@ -483,3 +483,6 @@ $RECYCLE.BIN/
 
 #thêm
 client/dist/
+
+# Local QA tools and temporary test artifacts
+/tests/local-qa/
