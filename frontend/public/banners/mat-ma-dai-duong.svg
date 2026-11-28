@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Mật Mã Đại Dương">
+  <defs>
+
+      <linearGradient id="bbg-ocean" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#021324"/>
+        <stop offset="100%" stop-color="#042F4B"/>
+      </linearGradient>
+    <linearGradient id="bfade-undefined" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0.88"/>
+      <stop offset="55%" stop-color="#090B10" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="1280" height="720" fill="url(#bbg-ocean)"/>
+      <circle cx="920" cy="360" r="280" fill="none" stroke="#0EA5E9" stroke-width="2" opacity="0.3"/>
+      <circle cx="920" cy="360" r="190" fill="none" stroke="#38BDF8" stroke-width="2" opacity="0.5"/>
+      <path d="M770 365 C820 325 1020 325 1075 365 C1020 405 820 405 770 365 Z" fill="#0F172A" stroke="#38BDF8" stroke-width="3"/>
+  <rect width="1280" height="720" fill="url(#bfade-undefined)"/>
+  <rect x="72" y="500" width="84" height="5" rx="2.5" fill="#38BDF8"/>
+  <text x="72" y="566" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="800" fill="#F8FAFC">Mật Mã Đại Dương</text>
+  <text x="72" y="614" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#CBD5E1" letter-spacing="2">HÀNH ĐỘNG · 125 PHÚT · T13</text>
+</svg>

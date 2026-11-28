@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="CHUYẾN XE BUÝT SỐ 19">
+  <defs>
+
+      <linearGradient id="bg-bus" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#065F46"/>
+        <stop offset="100%" stop-color="#0F172A"/>
+      </linearGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-bus)"/>
+      <path d="M60 220 Q220 140 330 220 T540 190" fill="none" stroke="#6EE7B7" stroke-width="4" stroke-dasharray="10 8"/>
+      <circle cx="115" cy="196" r="10" fill="#FDE047"/>
+      <circle cx="495" cy="204" r="10" fill="#FDE047"/>
+      <rect x="135" y="265" width="330" height="250" rx="28" fill="#10B981" stroke="#ECFDF5" stroke-width="5"/>
+      <rect x="165" y="300" width="125" height="95" rx="10" fill="#0F172A"/>
+      <rect x="310" y="300" width="125" height="95" rx="10" fill="#0F172A"/>
+      <rect x="245" y="420" width="110" height="44" rx="8" fill="#FEF08A"/>
+      <text x="300" y="451" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#064E3B">19</text>
+      <circle cx="185" cy="465" r="18" fill="#FDE047"/>
+      <circle cx="415" cy="465" r="18" fill="#FDE047"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#4ADE80"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">CHUYẾN XE BUÝT</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">SỐ 19</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">HÀI · TÂM LÝ</text>
+</svg>

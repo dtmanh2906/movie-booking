@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Đường Đua Cảng Biển">
+  <defs>
+
+      <linearGradient id="bbg-harbor" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#090D16"/>
+        <stop offset="100%" stop-color="#431407"/>
+      </linearGradient>
+    <linearGradient id="bfade-undefined" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0.88"/>
+      <stop offset="55%" stop-color="#090B10" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="1280" height="720" fill="url(#bbg-harbor)"/>
+      <path d="M500 500 L1240 360" stroke="#FB923C" stroke-width="8" opacity="0.8"/>
+      <path d="M540 540 L1240 410" stroke="#FACC15" stroke-width="4" opacity="0.65"/>
+      <path d="M740 445 L860 390 L1040 390 L1135 440 L1155 478 L720 478 Z" fill="#0F172A" stroke="#FB923C" stroke-width="4"/>
+  <rect width="1280" height="720" fill="url(#bfade-undefined)"/>
+  <rect x="72" y="500" width="84" height="5" rx="2.5" fill="#FB923C"/>
+  <text x="72" y="566" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="800" fill="#F8FAFC">Đường Đua Cảng Biển</text>
+  <text x="72" y="614" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#CBD5E1" letter-spacing="2">HÀNH ĐỘNG · GIẬT GÂN · 124 PHÚT · T13</text>
+</svg>

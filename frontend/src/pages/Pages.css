@@ -1,0 +1,620 @@
+/* ==========================================================================
+   Pages Styles - HomePage, MovieDetailPage, NotFoundPage
+   Breakpoint chuẩn: Mobile < 768px | Tablet 768px - <1024px | Desktop >= 1024px
+   Không dùng !important; mọi màu sắc đi qua CSS variables trong tokens.css.
+   ========================================================================== */
+
+.mb-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Hero Spotlight (thu gọn chiều cao trên Desktop để danh sách phim xuất hiện sớm hơn) */
+.mb-hero {
+  padding: var(--space-5) var(--space-6);
+  overflow: hidden;
+}
+
+.mb-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 176px;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.mb-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.mb-hero__eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.mb-hero__spotlight-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  background-color: var(--spotlight-bg);
+  border: 1px solid var(--spotlight-border);
+  color: var(--spotlight-text);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.mb-hero__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.mb-hero__facts {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+}
+
+.mb-hero__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mb-hero__fact dt {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.mb-hero__fact dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.mb-hero__actions {
+  margin-top: var(--space-1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.mb-hero__poster-wrap {
+  width: 100%;
+  max-width: 176px;
+  justify-self: end;
+}
+
+/* Section Headers */
+.mb-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.mb-section__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.mb-section__title {
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+.mb-section__subtitle {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Filter Bar */
+.mb-filter-bar {
+  padding: var(--space-4);
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.mb-filter-bar__search {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mb-filter-bar__search-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mb-filter-bar__genre {
+  flex: 0 1 260px;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mb-filter-bar__select {
+  width: 100%;
+}
+
+.mb-filter-bar__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.mb-filter-bar__reset {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Movie Grid */
+.mb-movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.mb-movie-skeleton {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mb-skeleton-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-elevated);
+}
+
+.mb-movie-skeleton__body {
+  padding: var(--space-1);
+}
+
+.mb-state-box {
+  padding: var(--space-8) var(--space-6);
+}
+
+.mb-pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-2);
+}
+
+/* Movie Detail Page */
+.mb-detail-nav {
+  display: flex;
+  align-items: center;
+}
+
+.mb-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.mb-back-link:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.mb-detail-hero {
+  position: relative;
+  padding: var(--space-8);
+  overflow: hidden;
+}
+
+.mb-detail-hero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mb-detail-hero__backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+}
+
+.mb-detail-hero__backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-backdrop-overlay);
+}
+
+.mb-detail-hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.mb-detail-hero__poster {
+  width: 100%;
+  max-width: 260px;
+}
+
+.mb-detail-hero__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mb-detail-hero__badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.mb-spec-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.mb-detail-hero__title {
+  margin: 0;
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+.mb-detail-hero__genres {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.mb-detail-hero__desc {
+  margin: 0;
+  max-width: 72ch;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.mb-detail-meta {
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-6);
+}
+
+.mb-detail-meta__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mb-detail-meta__row dt {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.mb-detail-meta__row dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Trailer */
+.mb-trailer-box {
+  padding: var(--space-6);
+}
+
+.mb-trailer-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-base);
+}
+
+.mb-trailer-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Showtimes */
+.mb-showtimes-box {
+  padding: var(--space-6);
+}
+
+.mb-showtimes-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.mb-showtimes-cinema-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 240px;
+}
+
+.mb-showtimes-cinema-select {
+  width: 100%;
+}
+
+.mb-date-tabs {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.mb-date-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 58px;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.mb-date-tab:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.mb-date-tab--active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.mb-date-tab--active:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-on-primary);
+}
+
+.mb-date-tab__weekday {
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.mb-date-tab__date {
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.mb-showtimes-loading,
+.mb-showtimes-empty {
+  padding: var(--space-6) var(--space-4);
+}
+
+.mb-cinema-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mb-cinema-group {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mb-cinema-group__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.mb-cinema-group__name {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.mb-cinema-group__count {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.mb-showtime-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.mb-showtime-item {
+  min-width: 168px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mb-showtime-item__time {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.mb-showtime-item__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.mb-not-found {
+  padding: var(--space-6);
+}
+
+/* Tablet: 768px .. < 1024px */
+@media (max-width: 1023.98px) {
+  .mb-movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mb-detail-hero__grid {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+
+  .mb-date-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767.98px) {
+  .mb-hero {
+    padding: var(--space-5);
+  }
+
+  .mb-hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .mb-hero__poster-wrap {
+    max-width: 210px;
+    justify-self: center;
+    order: -1;
+  }
+
+  .mb-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mb-filter-bar__search,
+  .mb-filter-bar__genre {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .mb-movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .mb-detail-hero {
+    padding: var(--space-5);
+  }
+
+  .mb-detail-hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .mb-detail-hero__poster {
+    max-width: 220px;
+    margin-inline: auto;
+  }
+
+  .mb-detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .mb-trailer-box,
+  .mb-showtimes-box {
+    padding: var(--space-4);
+  }
+
+  .mb-showtimes-cinema-filter {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .mb-date-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479.98px) {
+  .mb-movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mb-filter-bar__search-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
