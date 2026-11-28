@@ -14,6 +14,30 @@ namespace CinemaBooking.Infrastructure.Services;
 
 public class CinemaService(AppDbContext db) : ICinemaService
 {
+    public async Task<List<PublicCinemaDto>> GetPublicAsync(
+        string? city = null, CancellationToken cancellationToken = default)
+    {
+        var query = db.Cinemas.AsNoTracking().Where(c => c.IsActive);
+
+        if (!string.IsNullOrWhiteSpace(city))
+        {
+            var cityName = city.Trim();
+            query = query.Where(c => c.City == cityName);
+        }
+
+        return await query.OrderBy(c => c.Name).ThenBy(c => c.Id)
+            .Select(c => new PublicCinemaDto
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Code = c.Code,
+                Address = c.Address,
+                District = c.District,
+                City = c.City
+            })
+            .ToListAsync(cancellationToken);
+    }
+
     // 1. Lấy danh sách rạp
     public async Task<List<CinemaDto>> GetAllAsync(
         CancellationToken cancellationToken = default)

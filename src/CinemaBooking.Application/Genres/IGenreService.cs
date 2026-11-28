@@ -6,7 +6,7 @@ namespace CinemaBooking.Application.Genres;
 public interface IGenreService
 {
     // Lấy toàn bộ thể loại
-    Task<IReadOnlyList<GenreDto>> GetAllAsync();
+    Task<IReadOnlyList<GenreDto>> GetAllAsync(CancellationToken cancellationToken = default);
 
     // Lấy thể loại theo ID
     Task<GenreDto> GetByIdAsync(int id);
