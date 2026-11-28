@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="VÙNG XÁM TÍN HIỆU">
+  <defs>
+
+      <linearGradient id="bg-signal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1E1B4B"/>
+        <stop offset="50%" stop-color="#111827"/>
+        <stop offset="100%" stop-color="#030712"/>
+      </linearGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-signal)"/>
+      <rect x="70" y="150" width="460" height="330" rx="16" fill="#090D16" stroke="#4C1D95" stroke-width="3"/>
+      <line x1="70" y1="315" x2="530" y2="315" stroke="#312E81" stroke-width="1.5"/>
+      <polyline points="85,315 140,315 165,220 195,410 230,195 265,430 305,245 340,380 375,270 410,340 445,315 515,315" fill="none" stroke="#C084FC" stroke-width="4.5" stroke-linejoin="round"/>
+      <rect x="115" y="520" width="180" height="10" rx="5" fill="#A855F7" opacity="0.65"/>
+      <rect x="330" y="520" width="110" height="10" rx="5" fill="#38BDF8" opacity="0.65"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#A855F7"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">VÙNG XÁM</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">TÍN HIỆU</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">GIẬT GÂN · KHOA HỌC VIỄN TƯỞNG</text>
+</svg>

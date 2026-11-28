@@ -1,0 +1,153 @@
+/* ==========================================================================
+   MovieBooking Design System Tokens (Cinematic Dark + Light Mode)
+   Mọi thành phần CSS thuần đều tham chiếu các biến CSS ở đây để đồng bộ theme.
+   ========================================================================== */
+
+:root,
+:root[data-theme='dark'] {
+  /* Bảng màu Dark Mode - Cinematic Dark */
+  --color-bg-base: #0f1014;
+  --color-bg-surface: #1c1e26;
+  --color-bg-elevated: #252833;
+  --color-bg-header: rgba(15, 16, 20, 0.92);
+
+  --color-primary: #e50914;
+  --color-primary-hover: #c80812;
+  --color-primary-active: #a8060f;
+  --color-primary-soft: rgba(229, 9, 20, 0.16);
+  --color-primary-border: rgba(229, 9, 20, 0.48);
+  --spotlight-bg: #3d1218;
+  --spotlight-text: #ffd6d9;
+  --spotlight-border: rgba(229, 9, 20, 0.65);
+
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+
+  --color-border: #2a2d3a;
+  --color-border-strong: #3b4052;
+  --color-focus-ring: #ff4d58;
+
+  /* Màu ngữ nghĩa (Semantic) */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #38bdf8;
+
+  /* Đổ bóng nhẹ cho Dark Mode */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.48);
+
+  /* Lớp phủ ảnh điện ảnh */
+  --hero-backdrop-overlay: linear-gradient(
+    90deg,
+    rgba(15, 16, 20, 0.96) 0%,
+    rgba(15, 16, 20, 0.86) 55%,
+    rgba(15, 16, 20, 0.72) 100%
+  );
+  --poster-fallback-bg: linear-gradient(155deg, #21242f 0%, #14161d 100%);
+}
+
+:root[data-theme='light'] {
+  /* Bảng màu Light Mode - Tương phản cao, giữ bản sắc đỏ điện ảnh */
+  --color-bg-base: #f6f7fb;
+  --color-bg-surface: #ffffff;
+  --color-bg-elevated: #eef1f7;
+  --color-bg-header: rgba(255, 255, 255, 0.94);
+
+  --color-primary: #d90813;
+  --color-primary-hover: #b80710;
+  --color-primary-active: #99050d;
+  --color-primary-soft: rgba(217, 8, 19, 0.1);
+  --color-primary-border: rgba(217, 8, 19, 0.36);
+  --spotlight-bg: #fdecee;
+  --spotlight-text: #99050d;
+  --spotlight-border: rgba(217, 8, 19, 0.42);
+
+  --color-text-primary: #111318;
+  --color-text-secondary: #374151;
+  --color-text-muted: #4b5563;
+  --color-text-on-primary: #ffffff;
+
+  --color-border: #e2e5ee;
+  --color-border-strong: #c8cedd;
+  --color-focus-ring: #b80710;
+
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-error: #dc2626;
+  --color-info: #0369a1;
+
+  --shadow-sm: 0 2px 8px rgba(17, 19, 24, 0.06);
+  --shadow-md: 0 10px 26px rgba(17, 19, 24, 0.1);
+
+  --hero-backdrop-overlay: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.9) 55%,
+    rgba(246, 247, 251, 0.82) 100%
+  );
+  --poster-fallback-bg: linear-gradient(155deg, #eef1f7 0%, #e1e6f0 100%);
+}
+
+:root {
+  /* Typography hỗ trợ tiếng Việt đầy đủ (không phụ thuộc font CDN ngoài) */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto',
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 2.125rem;   /* 34px */
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  /* Spacing scale (bội số 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Bo góc (Border radius) */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+
+  /* Kích thước khung nội dung và điều hướng */
+  --container-max-width: 1240px;
+  --header-height: 68px;
+  --container-gutter: var(--space-6);
+
+  /* Focus ring cho keyboard accessibility */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+
+  /* Breakpoints thống nhất:
+     - Mobile: < 768px (kiểm thử chuẩn 375px)
+     - Tablet: 768px .. < 1024px (kiểm thử chuẩn 768px)
+     - Desktop: >= 1024px (kiểm thử chuẩn 1440px)
+  */
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --container-gutter: var(--space-4);
+    --text-3xl: 1.75rem;
+    --text-2xl: 1.375rem;
+  }
+}

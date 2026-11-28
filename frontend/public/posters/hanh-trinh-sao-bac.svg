@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="HÀNH TRÌNH SAO BẮC">
+  <defs>
+
+      <radialGradient id="bg-cosmos" cx="50%" cy="35%" r="70%">
+        <stop offset="0%" stop-color="#312E81"/>
+        <stop offset="55%" stop-color="#0F172A"/>
+        <stop offset="100%" stop-color="#030712"/>
+      </radialGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-cosmos)"/>
+      <circle cx="110" cy="140" r="2.5" fill="#F8FAFC"/>
+      <circle cx="490" cy="120" r="3" fill="#FDE68A"/>
+      <circle cx="160" cy="480" r="2" fill="#93C5FD"/>
+      <circle cx="510" cy="420" r="2.5" fill="#F8FAFC"/>
+      <ellipse cx="300" cy="350" rx="220" ry="70" transform="rotate(-22 300 350)" fill="none" stroke="#60A5FA" stroke-width="2.5" opacity="0.65"/>
+      <circle cx="300" cy="350" r="95" fill="#1E3A8A" stroke="#93C5FD" stroke-width="2"/>
+      <polygon points="300,145 318,228 400,245 318,262 300,345 282,262 200,245 282,228" fill="#FBBF24"/>
+      <polygon points="435,215 470,200 448,238" fill="#F8FAFC"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#FBBF24"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">HÀNH TRÌNH</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">SAO BẮC</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">HÀNH ĐỘNG · PHIÊU LƯU VŨ TRỤ</text>
+</svg>

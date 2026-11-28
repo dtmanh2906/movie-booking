@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="XƯỞNG BÁNH PHÉP THUẬT">
+  <defs>
+
+      <linearGradient id="bg-bakery" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#4C1D95"/>
+        <stop offset="100%" stop-color="#1E1B4B"/>
+      </linearGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-bakery)"/>
+      <circle cx="300" cy="340" r="175" fill="#FDE68A" opacity="0.16"/>
+      <rect x="175" y="420" width="250" height="110" rx="22" fill="#FDA4AF"/>
+      <rect x="210" y="330" width="180" height="95" rx="18" fill="#FDE047"/>
+      <rect x="255" y="255" width="90" height="80" rx="14" fill="#F472B6"/>
+      <rect x="292" y="205" width="16" height="52" rx="4" fill="#FFFFFF"/>
+      <circle cx="300" cy="188" r="14" fill="#FB923C"/>
+      <polygon points="130,240 140,265 165,270 140,280 130,305 120,280 95,270 120,265" fill="#FDE047"/>
+      <polygon points="470,210 478,230 498,235 478,243 470,262 462,243 442,235 462,230" fill="#67E8F9"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#FB7185"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">XƯỞNG BÁNH</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">PHÉP THUẬT</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">HOẠT HÌNH · HÀI HƯỚC</text>
+</svg>

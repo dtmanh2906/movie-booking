@@ -1,0 +1,236 @@
+/* ==========================================================================
+   MainLayout Styles - Header, Content Container, Footer & Mobile Menu
+   Breakpoint chuẩn: Mobile < 768px | Tablet 768px - <1024px | Desktop >= 1024px
+   ========================================================================== */
+
+.mb-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+
+/* Header */
+.mb-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: var(--color-bg-header);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+}
+
+.mb-header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.mb-header__brand-link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  padding: var(--space-1);
+}
+
+.mb-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mb-brand__icon {
+  flex-shrink: 0;
+}
+
+.mb-brand__text {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.mb-brand__name {
+  color: var(--color-text-primary);
+}
+
+.mb-brand__accent {
+  color: var(--color-primary);
+}
+
+.mb-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mb-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mb-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.mb-nav__link:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-elevated);
+}
+
+.mb-nav__link--active {
+  color: var(--color-text-primary);
+  background-color: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+}
+
+.mb-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+.mb-mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.mb-mobile-menu-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.mb-mobile-drawer {
+  display: none;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  padding-block: var(--space-3);
+}
+
+.mb-mobile-drawer--open {
+  display: block;
+}
+
+.mb-mobile-drawer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Main Content */
+.mb-main {
+  flex: 1 0 auto;
+  padding-block: var(--space-8);
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+
+.mb-main:focus {
+  outline: none;
+}
+
+/* Footer */
+.mb-footer {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-surface);
+  padding-block: var(--space-8);
+}
+
+.mb-footer__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.mb-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 460px;
+}
+
+.mb-footer__desc {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.mb-footer__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+
+.mb-footer__copyright {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.mb-footer__note {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Tablet và Desktop (>= 768px): tuyệt đối ẩn Mobile Drawer */
+@media (min-width: 768px) {
+  .mb-mobile-drawer,
+  .mb-mobile-drawer--open {
+    display: none;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767.98px) {
+  .mb-nav--desktop {
+    display: none;
+  }
+
+  .mb-mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .mb-main {
+    padding-block: var(--space-6);
+  }
+
+  .mb-footer__meta {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .mb-brand__text {
+    font-size: var(--text-lg);
+  }
+
+  .mb-theme-toggle__text {
+    display: none;
+  }
+}

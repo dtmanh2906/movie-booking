@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="BẦU TRỜI KHÔNG TIẾNG VANG">
+  <defs>
+
+      <linearGradient id="bg-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#083344"/>
+        <stop offset="55%" stop-color="#164E63"/>
+        <stop offset="100%" stop-color="#090D16"/>
+      </linearGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-sky)"/>
+      <circle cx="300" cy="290" r="190" fill="none" stroke="#22D3EE" stroke-width="2" opacity="0.35"/>
+      <circle cx="300" cy="290" r="145" fill="none" stroke="#67E8F9" stroke-width="3" opacity="0.5"/>
+      <rect x="265" y="160" width="70" height="270" rx="4" fill="#082F49" stroke="#22D3EE" stroke-width="3"/>
+      <path d="M40 530 L210 470 L390 520 L560 455 L600 660 L0 660 Z" fill="#0F172A"/>
+      <path d="M120 130 L490 250" stroke="#E0F2FE" stroke-width="3" stroke-dasharray="16 10"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#22D3EE"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">BẦU TRỜI KHÔNG</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">TIẾNG VANG</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">KHOA HỌC VIỄN TƯỞNG · HÀNH ĐỘNG</text>
+</svg>

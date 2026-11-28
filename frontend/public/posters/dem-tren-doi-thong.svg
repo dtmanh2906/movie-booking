@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="ĐÊM TRÊN ĐỒI THÔNG">
+  <defs>
+
+      <linearGradient id="bg-pine" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0D1321"/>
+        <stop offset="65%" stop-color="#1D2D44"/>
+        <stop offset="100%" stop-color="#0B0F17"/>
+      </linearGradient>
+      <radialGradient id="moon-glow" cx="72%" cy="24%" r="28%">
+        <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/>
+      </radialGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-pine)"/>
+      <rect width="600" height="900" fill="url(#moon-glow)"/>
+      <circle cx="430" cy="210" r="54" fill="#FEF3C7" opacity="0.9"/>
+      <circle cx="450" cy="198" r="46" fill="#0F172A"/>
+      <path d="M0 540 Q180 460 360 520 T600 490 L600 900 L0 900 Z" fill="#131D2E"/>
+      <path d="M0 610 Q220 550 420 600 T600 580 L600 900 L0 900 Z" fill="#0A101B"/>
+      <polygon points="95,620 135,410 175,620" fill="#060A12"/>
+      <polygon points="150,640 205,360 260,640" fill="#080D17"/>
+      <polygon points="360,650 410,390 460,650" fill="#060A12"/>
+      <polygon points="455,630 510,340 565,630" fill="#090F1A"/>
+      <rect x="278" y="548" width="48" height="36" fill="#0F172A"/>
+      <polygon points="270,550 302,524 334,550" fill="#1E293B"/>
+      <rect x="295" y="558" width="14" height="16" fill="#F59E0B" opacity="0.95"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#E11D48"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">ĐÊM TRÊN</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">ĐỒI THÔNG</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">KINH DỊ · RỪNG THÔNG ĐÀ LẠT</text>
+</svg>

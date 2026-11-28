@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="LỜI HỨA MÙA GIÓ BẤC">
+  <defs>
+
+      <linearGradient id="bg-wind" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#064E3B"/>
+        <stop offset="55%" stop-color="#0F172A"/>
+        <stop offset="100%" stop-color="#090D16"/>
+      </linearGradient>
+    <linearGradient id="fade-undefined" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#090B10" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#090B10" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#090B10" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+      <rect width="600" height="900" fill="url(#bg-wind)"/>
+      <polygon points="335,205 600,110 600,320" fill="#FEF08A" opacity="0.28"/>
+      <polygon points="275,540 295,210 335,210 355,540" fill="#E2E8F0"/>
+      <rect x="292" y="255" width="46" height="28" fill="#DC2626"/>
+      <rect x="295" y="185" width="40" height="28" fill="#FACC15"/>
+      <path d="M0 540 Q240 500 420 550 L600 570 L600 660 L0 660 Z" fill="#0F172A"/>
+      <path d="M40 310 Q160 270 250 320" fill="none" stroke="#6EE7B7" stroke-width="3" opacity="0.5"/>
+      <path d="M70 370 Q180 340 260 385" fill="none" stroke="#6EE7B7" stroke-width="2" opacity="0.4"/>
+  <rect width="600" height="900" fill="url(#fade-undefined)"/>
+  <rect x="48" y="684" width="64" height="4" rx="2" fill="#34D399"/>
+  <text x="48" y="730" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">LỜI HỨA MÙA</text>
+  <text x="48" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#F8FAFC" letter-spacing="-0.5">GIÓ BẤC</text>
+  <text x="48" y="844" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#CBD5E1" letter-spacing="1.5">TÂM LÝ · HẢI ĐĂNG MIỀN BẮC</text>
+</svg>

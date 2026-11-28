@@ -1,0 +1,154 @@
+@import './styles/tokens.css';
+
+/* Reset nền tảng gọn nhẹ, tương thích với Ant Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: var(--leading-normal);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Focus state rõ ràng cho điều hướng bằng bàn phím (Accessibility) */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Skip link hỗ trợ người dùng bàn phím nhảy thẳng tới nội dung chính */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: var(--space-3);
+  z-index: 1000;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: var(--space-4);
+}
+
+/* Container dùng chung cho Header, Main và Footer */
+.mb-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
+
+/* Surface card tái sử dụng theo Design System */
+.mb-surface {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Nút / Link hành động một phần tử duy nhất (tránh lồng Button trong Link) */
+.mb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.mb-btn--lg {
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  font-size: var(--text-base);
+}
+
+.mb-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.mb-btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.mb-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-on-primary);
+}
+
+.mb-btn--primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
+  color: var(--color-text-on-primary);
+}
+
+.mb-btn--secondary {
+  background-color: var(--color-bg-elevated);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.mb-btn--secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.mb-btn--secondary:active:not(:disabled) {
+  border-color: var(--color-primary-active);
+  color: var(--color-primary-active);
+}
+
+/* Tôn trọng người dùng bật giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
