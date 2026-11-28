@@ -6,6 +6,9 @@ namespace CinemaBooking.Application.Cinemas;
 
 public interface ICinemaService
 {
+    Task<List<PublicCinemaDto>> GetPublicAsync(
+        string? city = null, CancellationToken cancellationToken = default);
+
     Task<List<CinemaDto>> GetAllAsync(
         CancellationToken cancellationToken = default);
 

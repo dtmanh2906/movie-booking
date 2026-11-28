@@ -19,6 +19,7 @@ using FluentValidation;
 using CinemaBooking.Application.Cinemas;
 using CinemaBooking.Application.Rooms;
 using CinemaBooking.Application.Showtimes;
+using CinemaBooking.Application.PublicCatalog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -84,6 +85,7 @@ builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<ICinemaService, CinemaService>();
 builder.Services.AddScoped<IRoomService, RoomService>();
 builder.Services.AddScoped<IShowtimeService, ShowtimeService>();
+builder.Services.AddScoped<IPublicCatalogService, PublicCatalogService>();
 // Lấy cấu hình JWT
 var jwt = builder.Configuration
     .GetSection(JwtOptions.SectionName)

@@ -12,7 +12,7 @@ namespace CinemaBooking.Infrastructure.Services;
 public class GenreService(AppDbContext db) : IGenreService
 {
     // 1. Lấy danh sách thể loại
-    public async Task<IReadOnlyList<GenreDto>> GetAllAsync() =>
+    public async Task<IReadOnlyList<GenreDto>> GetAllAsync(CancellationToken cancellationToken = default) =>
         await db.Genres
             .AsNoTracking()
             .OrderBy(g => g.Name)
@@ -21,7 +21,7 @@ public class GenreService(AppDbContext db) : IGenreService
                 Id = g.Id,
                 Name = g.Name
             })
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
 
     // 2. Lấy thể loại theo ID
     public async Task<GenreDto> GetByIdAsync(int id) =>
